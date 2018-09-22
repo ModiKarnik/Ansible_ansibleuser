@@ -1,0 +1,9 @@
+---
+ - hosts: web1
+   become: true
+   vars:
+     run: "yes"
+   tasks:
+    - name: Execute when yes
+      apt: name=tree state=present
+      when: run == "yes"

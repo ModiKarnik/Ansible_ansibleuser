@@ -1,0 +1,9 @@
+---
+ - hosts: all 
+   become: true 
+   tasks:
+    - name: Install Git 
+      apt: name=git state=present update_cache=true
+    - name: create a file
+      file: path="/tmp/testing1" state=touch 
+
