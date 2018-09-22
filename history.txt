@@ -1,0 +1,46 @@
+    1  add-apt-repository ppa:ansible/ansible
+    2  apt-get update -y
+    3  apt-get install -y ansible
+    4  mkdir ansiblesession
+    5  cd ansiblesession/
+    6  ls
+    7  vim inventory 
+    8  ssh ansibleuser@192.168.33.20
+    9  ssh ansibleuser@192.168.33.30
+   10  ansible 192.168.33.20 – i inventory – u ansibleuser – m ping – k
+   11  ansible 192.168.33.20 -i inventory -u ansibleuser -m ping -k 
+   12  ansible 192.168.33.30 -i inventory -u ansibleuser -m ping -k 
+   13  ansible 192.168.33.30 -i inventory -u ansibleuser -m ping 
+   14  vim inventory 
+   15  ansible 192.168.33.30 -i inventory -m ping 
+   16  ansible 192.168.33.30 -i inventory -u ansibleuser -m ping 
+   17  vim inventory 
+   18  ansible web1 -i inventory -m ping 
+   19  vim inventory 
+   20  ansible web1 -i inventory -m ping 
+   21  ansible db1 -i inventory -m ping 
+   22  adduser ansibleuser
+   23  usermod ansibleuser -G sudo
+   24  su ansibleuser 
+   25  cp inventory /home/ansibleuser/ansiblesession/
+   26  su ansibleuser 
+   27  clear
+   28  ls
+   29  cd ansiblesession/
+   30  su ansibleuser -
+   31  su ansibleuser ~
+   32  su ansibleuser -
+   33  git init
+   34  git add -A
+   35  git commit -m "first commit"
+   36  su ansibleuser ~
+   37  su ansibleuser 
+   38  git remote add origin https://github.com/ModiKarnik/Ansible.git
+   39  git push -u origin master
+   40  su ansibleuser 
+   41  cd /home/ansibleuser/
+   42  ls
+   43  git init
+   44  git commit -m "first commit"
+   45  history 
+   46  history > history.txt
