@@ -111,3 +111,8 @@ ls -lR
 git init
 git add -A
 git commit -m "first commit"
+pwd
+cd ansiblesession/
+ls
+cp loop.yml wordpress.yml
+vim wordpress.yml 

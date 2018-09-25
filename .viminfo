@@ -7,12 +7,16 @@
 
 # hlsearch on (H) or off (h):
 ~h
+# Last Search Pattern:
+~Msle0~/\<copy\>
+
 # Command Line History (newest to oldest):
-:q
 :wq
+:q
 :q!
 
 # Search String History (newest to oldest):
+? \<copy\>
 
 # Expression History (newest to oldest):
 
@@ -25,27 +29,44 @@
 	[datacenter:children]
 	webservers
 ""1	LINE	0
-	      command: apt-get install links
+	      service:
 "2	LINE	0
-	ansible_ssh_user=ansibleuser
+	    - name: Install LAMP services on remote vms
 "3	LINE	0
+	      command: apt-get install links
+"4	LINE	0
+	ansible_ssh_user=ansibleuser
+"5	LINE	0
 	[datacenter:vars]
 "-	CHAR	0
 	12345678
 
 # File marks:
-'0  1  0  ~/ansiblesession/simple.yml
-'1  1  0  ~/ansiblesession/loop.yml
-'2  2  0  ~/ansiblesession/loop.yml
-'3  13  17  ~/ansiblesession/loop.yml
-'4  12  11  ~/ansiblesession/loop.yml
-'5  1  0  ~/ansiblesession/loop
-'6  12  21  ~/ansiblesession/loop2.yml
-'7  1  0  ~/ansiblesession/simple2.
-'8  1  0  ~/ansiblesession/variable.yml
-'9  1  0  ~/ansiblesession/conditional2.yml
+'0  50  51  ~/ansiblesession/wordpress.yml
+'1  56  6  ~/ansiblesession/wordpress.yml
+'2  53  26  ~/ansiblesession/wordpress.yml
+'3  45  5  ~/ansiblesession/wordpress.yml
+'4  36  0  ~/ansiblesession/wordpress.yml
+'5  61  0  ~/ansiblesession/wordpress.yml
+'6  63  0  ~/ansiblesession/wordpress.yml
+'7  30  3  ~/ansiblesession/wordpress.yml
+'8  1  0  ~/ansiblesession/wordpress.yml
+'9  1  0  ~/ansiblesession/inventory
 
 # Jumplist (newest first):
+-'  50  51  ~/ansiblesession/wordpress.yml
+-'  51  5  ~/ansiblesession/wordpress.yml
+-'  1  0  ~/ansiblesession/wordpress.yml
+-'  56  6  ~/ansiblesession/wordpress.yml
+-'  53  26  ~/ansiblesession/wordpress.yml
+-'  45  5  ~/ansiblesession/wordpress.yml
+-'  36  0  ~/ansiblesession/wordpress.yml
+-'  61  0  ~/ansiblesession/wordpress.yml
+-'  63  0  ~/ansiblesession/wordpress.yml
+-'  30  3  ~/ansiblesession/wordpress.yml
+-'  1  0  ~/ansiblesession/inventory
+-'  70  0  ~/ansiblesession/wordpress.yml
+-'  20  5  ~/ansiblesession/wordpress.yml
 -'  1  0  ~/ansiblesession/simple.yml
 -'  1  0  ~/ansiblesession/loop.yml
 -'  2  0  ~/ansiblesession/loop.yml
@@ -66,7 +87,6 @@
 -'  8  8  ~/ansiblesession/simple.yml
 -'  9  0  ~/ansiblesession/simple.yml
 -'  18  0  ~/ansiblesession/inventory
--'  1  0  ~/ansiblesession/inventory
 -'  6  5  ~/ansiblesession/simple.yml
 -'  19  27  ~/ansiblesession/inventory
 -'  17  0  ~/ansiblesession/inventory
@@ -74,24 +94,29 @@
 -'  4  34  ~/ansiblesession/inventory
 -'  2  32  ~/ansiblesession/inventory
 -'  20  27  ~/ansiblesession/inventory
--'  18  0  ~/ansiblesession/inventory
+-'  10  0  ~/ansiblesession/simple.yml
 -'  1  0  ~/ansiblesession/inventory
--'  19  27  ~/ansiblesession/inventory
--'  17  0  ~/ansiblesession/inventory
--'  12  2  ~/ansiblesession/inventory
--'  4  34  ~/ansiblesession/inventory
--'  2  32  ~/ansiblesession/inventory
--'  20  27  ~/ansiblesession/inventory
+-'  1  0  ~/ansiblesession/simple.yml
+-'  1  0  ~/ansiblesession/loop.yml
+-'  2  0  ~/ansiblesession/loop.yml
+-'  13  17  ~/ansiblesession/loop.yml
+-'  12  11  ~/ansiblesession/loop.yml
+-'  1  0  ~/ansiblesession/loop
+-'  12  21  ~/ansiblesession/loop2.yml
+-'  1  0  ~/ansiblesession/loop2.yml
+-'  1  0  ~/ansiblesession/simple2.
+-'  1  0  ~/ansiblesession/variable.yml
+-'  1  0  ~/ansiblesession/conditional2.yml
+-'  5  11  ~/ansiblesession/conditional2.yml
+-'  2  0  ~/ansiblesession/variable.yml
+-'  4  3  ~/ansiblesession/variable.yml
+-'  1  0  ~/ansiblesession/simple2.yml
+-'  8  1  ~/ansiblesession/simple2.yml
+-'  6  32  ~/ansiblesession/simple2.yml
+-'  8  8  ~/ansiblesession/simple.yml
+-'  9  0  ~/ansiblesession/simple.yml
 -'  18  0  ~/ansiblesession/inventory
--'  1  0  ~/ansiblesession/inventory
--'  19  27  ~/ansiblesession/inventory
--'  17  0  ~/ansiblesession/inventory
--'  12  2  ~/ansiblesession/inventory
--'  4  34  ~/ansiblesession/inventory
--'  2  32  ~/ansiblesession/inventory
--'  20  27  ~/ansiblesession/inventory
--'  18  0  ~/ansiblesession/inventory
--'  1  0  ~/ansiblesession/inventory
+-'  6  5  ~/ansiblesession/simple.yml
 -'  19  27  ~/ansiblesession/inventory
 -'  17  0  ~/ansiblesession/inventory
 -'  12  2  ~/ansiblesession/inventory
@@ -99,52 +124,139 @@
 -'  2  32  ~/ansiblesession/inventory
 -'  20  27  ~/ansiblesession/inventory
 -'  10  0  ~/ansiblesession/simple.yml
--'  18  0  ~/ansiblesession/inventory
 -'  1  0  ~/ansiblesession/inventory
+-'  62  0  ~/ansiblesession/wordpress.yml
+-'  1  0  ~/ansiblesession/simple.yml
+-'  1  0  ~/ansiblesession/loop.yml
+-'  2  0  ~/ansiblesession/loop.yml
+-'  13  17  ~/ansiblesession/loop.yml
+-'  12  11  ~/ansiblesession/loop.yml
+-'  1  0  ~/ansiblesession/loop
+-'  12  21  ~/ansiblesession/loop2.yml
+-'  1  0  ~/ansiblesession/loop2.yml
+-'  1  0  ~/ansiblesession/simple2.
+-'  1  0  ~/ansiblesession/variable.yml
+-'  1  0  ~/ansiblesession/conditional2.yml
+-'  5  11  ~/ansiblesession/conditional2.yml
+-'  2  0  ~/ansiblesession/variable.yml
+-'  4  3  ~/ansiblesession/variable.yml
+-'  1  0  ~/ansiblesession/simple2.yml
+-'  8  1  ~/ansiblesession/simple2.yml
+-'  6  32  ~/ansiblesession/simple2.yml
+-'  8  8  ~/ansiblesession/simple.yml
+-'  9  0  ~/ansiblesession/simple.yml
+-'  18  0  ~/ansiblesession/inventory
+-'  6  5  ~/ansiblesession/simple.yml
 -'  19  27  ~/ansiblesession/inventory
 -'  17  0  ~/ansiblesession/inventory
 -'  12  2  ~/ansiblesession/inventory
 -'  4  34  ~/ansiblesession/inventory
 -'  2  32  ~/ansiblesession/inventory
--'  20  27  ~/ansiblesession/inventory
--'  18  0  ~/ansiblesession/inventory
--'  1  0  ~/ansiblesession/inventory
--'  19  27  ~/ansiblesession/inventory
--'  17  0  ~/ansiblesession/inventory
--'  12  2  ~/ansiblesession/inventory
--'  4  34  ~/ansiblesession/inventory
--'  2  32  ~/ansiblesession/inventory
--'  20  27  ~/ansiblesession/inventory
--'  18  0  ~/ansiblesession/inventory
--'  1  0  ~/ansiblesession/inventory
--'  19  27  ~/ansiblesession/inventory
--'  17  0  ~/ansiblesession/inventory
--'  12  2  ~/ansiblesession/inventory
--'  4  34  ~/ansiblesession/inventory
--'  2  32  ~/ansiblesession/inventory
--'  20  27  ~/ansiblesession/inventory
--'  18  0  ~/ansiblesession/inventory
--'  1  0  ~/ansiblesession/inventory
--'  19  27  ~/ansiblesession/inventory
--'  17  0  ~/ansiblesession/inventory
--'  12  2  ~/ansiblesession/inventory
--'  4  34  ~/ansiblesession/inventory
--'  2  32  ~/ansiblesession/inventory
--'  20  27  ~/ansiblesession/inventory
--'  18  0  ~/ansiblesession/inventory
--'  1  0  ~/ansiblesession/inventory
--'  19  27  ~/ansiblesession/inventory
--'  17  0  ~/ansiblesession/inventory
--'  12  2  ~/ansiblesession/inventory
--'  4  34  ~/ansiblesession/inventory
--'  2  32  ~/ansiblesession/inventory
--'  20  27  ~/ansiblesession/inventory
--'  18  0  ~/ansiblesession/inventory
--'  1  0  ~/ansiblesession/inventory
--'  19  27  ~/ansiblesession/inventory
--'  17  0  ~/ansiblesession/inventory
 
 # History of marks within files (newest to oldest):
+
+> ~/ansiblesession/wordpress.yml
+	"	50	51
+	^	50	52
+	.	50	51
+	+	7	33
+	+	85	11
+	+	7	19
+	+	85	13
+	+	11	7
+	+	85	0
+	+	17	0
+	+	3	0
+	+	2	21
+	+	19	22
+	+	20	72
+	+	30	32
+	+	32	80
+	+	83	0
+	+	38	5
+	+	20	10
+	+	32	10
+	+	75	0
+	+	73	0
+	+	45	8
+	+	42	5
+	+	43	5
+	+	44	5
+	+	45	5
+	+	46	6
+	+	42	6
+	+	43	6
+	+	44	6
+	+	45	6
+	+	48	17
+	+	46	27
+	+	57	39
+	+	65	0
+	+	63	6
+	+	58	21
+	+	64	30
+	+	66	11
+	+	64	8
+	+	65	8
+	+	49	4
+	+	51	4
+	+	52	3
+	+	53	2
+	+	54	1
+	+	57	0
+	+	58	0
+	+	63	0
+	+	64	3
+	+	65	2
+	+	66	29
+	+	67	12
+	+	69	21
+	+	28	0
+	+	26	0
+	+	23	5
+	+	25	113
+	+	26	31
+	+	62	4
+	+	61	26
+	+	62	3
+	+	63	3
+	+	64	3
+	+	65	3
+	+	27	3
+	+	28	3
+	+	29	3
+	+	30	3
+	+	46	5
+	+	47	5
+	+	48	5
+	+	42	5
+	+	43	5
+	+	44	5
+	+	45	5
+	+	52	28
+	+	53	27
+	+	52	21
+	+	56	25
+	+	57	6
+	+	51	5
+	+	52	5
+	+	53	5
+	+	54	5
+	+	55	5
+	+	56	5
+	+	50	51
+
+> ~/ansiblesession/inventory
+	"	1	0
+	.	19	0
+	+	2	35
+	+	4	34
+	+	9	3
+	+	12	3
+	+	14	21
+	+	16	9
+	+	19	15
+	+	19	0
 
 > ~/ansiblesession/simple.yml
 	"	1	0
@@ -212,15 +324,3 @@
 	+	6	32
 	+	7	2
 	+	8	2
-
-> ~/ansiblesession/inventory
-	"	18	0
-	.	19	0
-	+	2	35
-	+	4	34
-	+	9	3
-	+	12	3
-	+	14	21
-	+	16	9
-	+	19	15
-	+	19	0

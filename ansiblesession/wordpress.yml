@@ -1,0 +1,84 @@
+---
+#packages and services
+
+ - hosts: web1
+   become: true
+   tasks: 
+    - name: Download LAMP packages on remote vms
+      apt:
+       name: "{{ item }}"
+       state: latest
+       update_cache: yes    
+      with_items:
+       - apache2
+       - mysql-server
+       - php  
+       - php-mysql
+
+# DB 
+    - name: mysqladmin
+      shell: mysqladmin -u root password 123@India && touch /tmp/test1
+      args:
+        creates: /tmp/test1
+    - name: mysqlcommands download
+      get_url:
+        url: https://raw.githubusercontent.com/ModiKarnik/chefrepo/master/cookbooks/wordpress/files/default/mysqlcommands
+        dest: /tmp/mysqlcommands
+   # - name: mysqlcommands
+   #   copy: 
+   #     src: /tmp/mysqlcommands
+   #     dest: /tmp/mysqlcommands
+    - name: mysqlroot
+      shell: mysql -uroot -p123@India < /tmp/mysqlcommands && touch /tmp/test2
+      args:
+        creates: /tmp/test2
+
+#wordpress
+    - name: wordpress_latest
+      get_url:
+        url: http://wordpress.org/latest.tar.gz
+        dest: /tmp/latest.tar.gz
+    - name: extract
+      unarchive:
+        src: /tmp/latest.tar.gz
+        dest: /tmp
+        remote_src: yes
+     # shell: tar -xvzf /tmp/latest.tar.gz
+     # args:
+     #   creates: /tmp/wordpress/wp-cron.php 
+    - name: Copy
+      command: cp -r /tmp/wordpress/. /var/www/html/
+     # copy:
+     #   src: "{{ item }}"
+     #   dest: /var/www/html
+     #   remote_src: yes
+     # with_fileglob:
+     #   - /tmp/wordpress/*
+      #  validate: if [ -f /var/www/html/wp-cron.php ]
+    - name: download wp-config.php
+      get_url:
+        url: https://raw.githubusercontent.com/ModiKarnik/chefrepo/master/cookbooks/wordpress/files/default/wp-config.php
+        dest: /var/www/html/wp-config.php
+   # - name: wp-config
+   #   copy:
+   #     src: /tmp/wp-config.php
+   #     dest: /var/www/html/wp-config.php
+    - name: Delete index.html
+      file: 
+        path: /var/www/html/index.html
+        state: absent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
